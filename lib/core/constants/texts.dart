@@ -7,7 +7,7 @@ class MyTextStyle {
           color: Colors.orange, fontSize: 45, fontWeight: FontWeight.bold));
   static TextStyle subname = GoogleFonts.poppins(
       textStyle: TextStyle(
-          color: Colors.white, fontSize: 40, fontWeight: FontWeight.bold));
+          color: Colors.white, fontSize: 37, fontWeight: FontWeight.bold));
 
   static TextStyle normaltext = GoogleFonts.poppins(
       textStyle: TextStyle(
@@ -20,4 +20,8 @@ class MyTextStyle {
     color: Colors.grey,
     fontSize: 30,
   ));
+
+  static TextStyle cursivetext = GoogleFonts.dancingScript(
+      textStyle: TextStyle(
+          color: Colors.grey, fontWeight: FontWeight.bold, fontSize: 60));
 }

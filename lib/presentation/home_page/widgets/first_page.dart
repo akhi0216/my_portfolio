@@ -79,14 +79,14 @@ class _FirstPageState extends State<FirstPage> {
           crossAxisAlignment: CrossAxisAlignment.start,
           // mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            Container(
-              height: 250,
-              width: 250,
-              decoration: BoxDecoration(
-                  image: DecorationImage(
-                      image: AssetImage(Imageconstants.flutterpc))),
-              // Lottie.asset("assets/images/Animation - 1716288304246.json"),
-            ),
+            // Container(
+            //   height: 90,
+            //   width: 90,
+            //   decoration: BoxDecoration(
+            //       image: DecorationImage(
+            //           image: AssetImage(Imageconstants.flutterpc))),
+            //   // Lottie.asset("assets/images/Animation - 1716288304246.json"),
+            // ),
             SizedBox(
               width: 100,
             ),
@@ -108,6 +108,7 @@ class _FirstPageState extends State<FirstPage> {
                 child: AnimatedTextKit(
                   animatedTexts: [
                     TypewriterAnimatedText(
+                        // "I dont develop apps, I paint them with Flutter",
                         "A Flutter Developer with a passion for devleoping scalable mobile applications with a strong problem-solving skills and a focus on writing read and maintainable code",
                         textAlign: TextAlign.start,
                         textStyle: TextStyle(
