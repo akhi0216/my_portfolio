@@ -1,5 +1,8 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:lottie/lottie.dart';
 import 'package:my_portfolio/core/constants/color_constants.dart';
 import 'package:my_portfolio/core/constants/texts.dart';
 
@@ -11,6 +14,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  bool isExpanded = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,9 +30,9 @@ class _HomePageState extends State<HomePage> {
               children: [
                 // -------------------------------------------first page
                 Container(
-                  height: constraints.maxHeight * 0.7,
-                  // height: 400,
-                  width: constraints.maxWidth,
+                  // height: constraints.maxHeight * 0.7,
+
+                  // width: constraints.maxWidth,
 
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -75,7 +79,51 @@ class _HomePageState extends State<HomePage> {
                                 "assets/images/WhatsApp Image 2024-05-16 at 12.18.17_9bb9010d.jpg"),
                           ),
                         ),
+                      ),
+
+                      SizedBox(
+                        height: 150,
+                      ),
+
+                      // ================2
+                      // Row(
+                      //   children: [
+                      //     Text(
+                      //       "sss",
+                      //       style: TextStyle(color: Colors.white),
+                      //     )
+                      //   ],
+                      // )
+
+                      // lottie
+                      Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        // mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          SizedBox(
+                            height: 250,
+                            width: 250,
+                            child: Lottie.asset(
+                                "assets/images/Animation - 1716275187656.json"),
+                          ),
+                          SizedBox(
+                            width: 100,
+                          ),
+                          Expanded(
+                            child: Padding(
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 8.0),
+                              child: Text(
+                                "A Flutter Developer wiyh a passion for devleoping scalable mobile applications with a strong problem-solving skills and a focus on writing read and maintainable code",
+                                style: MyTextStyle.normaltext,
+                                textAlign: TextAlign.justify,
+                              ),
+                            ),
+                          )
+                        ],
                       )
+
+                      // ----------------------2
                     ],
                   ),
                 ),

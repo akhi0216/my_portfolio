@@ -8,4 +8,8 @@ class MyTextStyle {
   static TextStyle subname = GoogleFonts.poppins(
       textStyle: TextStyle(
           color: Colors.white, fontSize: 50, fontWeight: FontWeight.bold));
+
+  static TextStyle normaltext = GoogleFonts.poppins(
+      textStyle: TextStyle(
+          color: Colors.white, fontSize: 35, fontWeight: FontWeight.bold));
 }
