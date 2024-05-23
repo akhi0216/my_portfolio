@@ -133,12 +133,17 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
 
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:my_portfolio/core/constants/color_constants.dart';
 import 'package:my_portfolio/core/constants/texts.dart';
+import 'package:my_portfolio/presentation/about_me/about_me.dart';
+import 'package:my_portfolio/presentation/get_in_touch/get_in_touch.dart';
 import 'package:my_portfolio/presentation/home_page/widgets/first_page.dart';
-import 'package:my_portfolio/presentation/home_page/widgets/second_page.dart';
+import 'package:my_portfolio/presentation/get_in_touch/widgets/fourth_page.dart';
+import 'package:my_portfolio/presentation/home_page/widgets/popitems.dart';
+import 'package:my_portfolio/presentation/about_me/widgets/second_page.dart';
 import 'package:my_portfolio/presentation/home_page/widgets/third_page.dart';
 
 class HomePage extends StatefulWidget {
@@ -149,51 +154,242 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  // scroll controller
+  final ScrollController _scrollController = ScrollController();
+  void _scrollToThirdPage() {
+    _scrollController.animateTo(1000,
+        duration: Duration(seconds: 3), curve: Curves.easeInOut);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: ColorConstants.mainBlack,
+
+        // centerTitle: true,
+        title: Text(
+          "Hey There!",
+          style: GoogleFonts.dancingScript(
+              textStyle: TextStyle(
+                  fontSize: 35,
+                  color: Colors.orange,
+                  fontWeight: FontWeight.bold)),
+        ),
+
+        actions: [
+          // onTap:() => _scrollToSecondPage,
+
+          Text(
+            "Home",
+            style: MyTextStyle.appbartext,
+          ),
+          SizedBox(
+            width: 15,
+          ),
+
+          InkWell(
+            onTap: () {
+              _scrollToThirdPage();
+              setState(() {});
+            },
+            child: Text(
+              "Portfolio",
+              style: MyTextStyle.appbartext,
+            ),
+          ),
+
+          SizedBox(
+            width: 15,
+          ),
+
+          InkWell(
+            onTap: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => AboutMe(),
+                  ));
+            },
+            child: Text(
+              "About Me",
+              style: MyTextStyle.appbartext,
+            ),
+          ),
+
+          SizedBox(
+            width: 15,
+          ),
+          InkWell(
+            onTap: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => GetInTouch(),
+                  ));
+            },
+            child: Text(
+              "Get In Touch",
+              style: MyTextStyle.appbartext,
+            ),
+          ),
+          SizedBox(
+            width: 7,
+          )
+        ],
+        // actions: [
+        //   Container(
+        //     height: 30,
+        //     width: 30,
+        //     decoration: BoxDecoration(
+        //         image: DecorationImage(
+        //             image: AssetImage("assets/images/github.png"),
+        //             fit: BoxFit.contain),
+        //         borderRadius: BorderRadius.circular(100),
+        //         color: Colors.white),
+        //   ),
+
+        //   SizedBox(
+        //     width: 16,
+        //   ),
+        //   Container(
+        //     height: 30,
+        //     width: 30,
+        //     decoration: BoxDecoration(
+        //         image: DecorationImage(
+        //             image: AssetImage("assets/images/linkedin-big-logo.png"),
+        //             fit: BoxFit.fill),
+        //         borderRadius: BorderRadius.all(Radius.circular(3)),
+        //         color: Colors.white),
+        //   ),
+        //   // CircleAvatar(
+        //   //   radius: 20,
+        //   //   backgroundColor: Colors.white,
+        //   //   child: CircleAvatar(
+        //   //     radius: 18,
+        //   //     backgroundImage:
+        //   //         AssetImage("assets/images/linkedin-big-logo.png"),
+        //   //   ),
+        //   // ),
+        //   SizedBox(
+        //     width: 16,
+        //   ),
+        //   Container(
+        //     height: 20,
+        //     width: 30,
+        //     decoration: BoxDecoration(
+        //         image: DecorationImage(
+        //             image: AssetImage("assets/images/email.png"),
+        //             fit: BoxFit.cover),
+        //         borderRadius: BorderRadius.all(Radius.circular(2)),
+        //         color: Colors.white),
+        //   ),
+        //   // CircleAvatar(
+        //   //   radius: 20,
+        //   //   backgroundColor: Colors.white,
+        //   //   child: CircleAvatar(
+        //   //     radius: 18,
+        //   //     backgroundImage: AssetImage("assets/images/email.png"),
+        //   //   ),
+        //   // ),
+        //   SizedBox(
+        //     width: 16,
+        //   ),
+        //   Container(
+        //     height: 30,
+        //     width: 30,
+        //     decoration: BoxDecoration(
+        //         image: DecorationImage(
+        //             image: AssetImage("assets/images/instagram.png"),
+        //             fit: BoxFit.contain),
+        //         borderRadius: BorderRadius.all(Radius.circular(2)),
+        //         color: Colors.white),
+        //   ),
+        //   // CircleAvatar(
+        //   //   radius: 20,
+        //   //   backgroundColor: Colors.white,
+        //   //   child: CircleAvatar(
+        //   //     radius: 18,
+        //   //     backgroundImage: AssetImage("assets/images/instagram.png"),
+        //   //   ),
+        //   // ),
+        //   SizedBox(
+        //     width: 20,
+        //   ),
+        // ],
+      ),
       backgroundColor: ColorConstants.mainBlack,
       body: LayoutBuilder(
         builder: (context, constraints) {
           return SingleChildScrollView(
+            controller: _scrollController,
             child: Column(
               children: [
                 // --------------------first page
                 FirstPage(),
-                SizedBox(height: 200),
+                SizedBox(height: 100),
 
                 // -------------------second
-                SecondPage(),
-                SizedBox(height: 100),
+                // SecondPage(),
+                // SizedBox(height: 100),
                 // --------------------------------third
                 ThirdPage(),
                 // ----------------------------------------fourth
 
-                SizedBox(height: 100),
-                Text(
-                  "KEEP IN TOUCH",
-                  style: MyTextStyle.cursivetext,
-                ),
+                FourthPagr()
+                //  =-----------------------------------------
 
-                Container(
-                  height: constraints.maxHeight * 0.7,
-                  width: constraints.maxWidth,
-                  decoration: BoxDecoration(
-                    // color: Colors.red,
-                    gradient: LinearGradient(
-                      colors: [
-                        Colors.orange,
-                        Color.fromARGB(255, 222, 69, 61),
-                        Colors.orange,
-                        Color.fromARGB(255, 222, 69, 61),
-                        Colors.orange,
-                        Color.fromARGB(255, 222, 69, 61),
-                      ],
-                      begin: Alignment.bottomRight,
-                      end: Alignment.topLeft,
-                    ),
-                  ),
-                ),
+                // Row(
+                //   mainAxisAlignment: MainAxisAlignment.center,
+                //   children: [
+                //     Text(
+                //       "Connect Me Through",
+                //       style: MyTextStyle.insidewhitetext,
+                //     ),
+                //     SizedBox(
+                //       width: 2,
+                //     ),
+
+                // IconButton(
+                //     onPressed: () {
+                //       showModalBottomSheet(
+                //         context: context,
+                //         builder: (context) =>
+
+                //         Column(
+                //           children: [CircleAvatar(), CircleAvatar()],
+                //         ),
+                //       );
+                //     },
+                //     icon: Icon(
+                //       Icons.arrow_circle_right,
+                //       color: Colors.orange,
+                //     ))
+
+                // PopupMenuButton(
+                //   onSelected: (value) {
+                //     switch (value) {
+                //       case 0:
+                //         print("icon 1 clicked");
+                //         break;
+                //     }
+                //   },
+                //   icon: Icon(
+                //     Icons.arrow_circle_right,
+                //     color: Colors.orange,
+                //   ),
+                //   itemBuilder: (context) => [
+                //     PopupMenuItem(
+                //         value: 0, child: Icon(Icons.heart_broken)),
+                //     // PopupMenuItem(child: Icon(Icons.home))
+                //   ],
+                // )
+                //   ],
+                // )
+
+                // SizedBox(
+                //   height: 100,
+                // )
               ],
             ),
           );

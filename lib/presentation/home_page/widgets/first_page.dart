@@ -24,6 +24,9 @@ class _FirstPageState extends State<FirstPage> {
         Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
+        SizedBox(
+          height: 100,
+        ),
         Text(
           "Akhila M",
           style: MyTextStyle.name,
@@ -62,8 +65,10 @@ class _FirstPageState extends State<FirstPage> {
             radius: 75,
             child: CircleAvatar(
               radius: 70,
-              backgroundImage: AssetImage(
-                  "assets/images/WhatsApp Image 2024-05-16 at 12.18.17_9bb9010d.jpg"),
+              backgroundImage: AssetImage("assets/images/me.jpg"
+
+                  // "assets/images/WhatsApp Image 2024-05-16 at 12.18.17_9bb9010d.jpg"
+                  ),
             ),
           ),
         ),
