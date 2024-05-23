@@ -21,24 +21,23 @@ class MyTextStyle {
     fontSize: 30,
   ));
 
-  static TextStyle cursivetext = GoogleFonts.dancingScript(
-      textStyle: TextStyle(
-          color: Colors.grey, fontWeight: FontWeight.bold, fontSize: 60));
+  static TextStyle cursivetext = GoogleFonts.poppins(
+      textStyle: TextStyle(color: Colors.white, fontSize: 60));
 
   static TextStyle insidetext = GoogleFonts.openSans(
       textStyle: TextStyle(
           color: Colors.white, fontSize: 25, fontWeight: FontWeight.bold));
   static TextStyle insideblacktext = GoogleFonts.openSans(
       textStyle: TextStyle(
-          color: Colors.black, fontSize: 25, fontWeight: FontWeight.bold));
+          color: Colors.white, fontSize: 25, fontWeight: FontWeight.bold));
   static TextStyle insidegreytext = GoogleFonts.poppins(
       textStyle: TextStyle(
     color: Colors.grey,
     fontSize: 15,
   ));
-   static TextStyle insidesecondblacktext = GoogleFonts.poppins(
+  static TextStyle insidesecondblacktext = GoogleFonts.poppins(
       textStyle: TextStyle(
-    color: Colors.black,
+    color: Colors.white,
     fontSize: 15,
   ));
 

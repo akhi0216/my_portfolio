@@ -155,7 +155,7 @@ class _SecondPageState extends State<SecondPage> {
           },
           child: AnimatedContainer(
             padding: EdgeInsets.all(10),
-            color: Colors.white,
+            color: Colors.orange,
             duration: Duration(milliseconds: 500),
             curve: Curves.easeInOut,
             height: isexpandedtwo ? 250 : 200,
@@ -166,7 +166,7 @@ class _SecondPageState extends State<SecondPage> {
               children: [
                 Icon(
                   Icons.flutter_dash_outlined,
-                  color: Colors.black,
+                  color: Colors.white,
                 ),
                 SizedBox(
                   height: 10,

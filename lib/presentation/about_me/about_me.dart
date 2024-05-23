@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -5,6 +7,10 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:my_portfolio/core/constants/color_constants.dart';
 import 'package:my_portfolio/core/constants/texts.dart';
 import 'package:my_portfolio/presentation/about_me/widgets/second_page.dart';
+import 'package:my_portfolio/presentation/get_in_touch/get_in_touch.dart';
+import 'package:my_portfolio/presentation/home_page/home_page.dart';
+import 'package:my_portfolio/presentation/home_page/widgets/third_page.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class AboutMe extends StatefulWidget {
   const AboutMe({super.key});
@@ -14,10 +20,107 @@ class AboutMe extends StatefulWidget {
 }
 
 class _AboutMeState extends State<AboutMe> {
+  void _launchURL(String urlString) async {
+    final Uri url = Uri.parse(urlString);
+    if (await canLaunchUrl(url)) {
+      await launchUrl(url);
+    } else {
+      throw 'Could not launch $urlString';
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: ColorConstants.mainBlack,
+      appBar: AppBar(
+        backgroundColor: ColorConstants.mainBlack,
+
+        // centerTitle: true,
+        title: Text(
+          "Hey There!",
+          style: GoogleFonts.poppins(
+              textStyle: TextStyle(
+                  fontSize: 18,
+                  color: Colors.orange,
+                  fontWeight: FontWeight.bold)),
+        ),
+
+        actions: [
+          // onTap:() => _scrollToSecondPage,
+          InkWell(
+            onTap: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => HomePage(),
+                  ));
+            },
+            child: Text(
+              "Home",
+              style: MyTextStyle.appbartext,
+            ),
+          ),
+
+          SizedBox(
+            width: 15,
+          ),
+
+          InkWell(
+            onTap: () {
+              // _scrollToThirdPage();
+              // setState(() {});
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => ThirdPage(),
+                  ));
+            },
+            child: Text(
+              "Portfolio",
+              style: MyTextStyle.appbartext,
+            ),
+          ),
+
+          SizedBox(
+            width: 15,
+          ),
+
+          InkWell(
+            onTap: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => AboutMe(),
+                  ));
+            },
+            child: Text(
+              "About Me",
+              style: MyTextStyle.appbartext,
+            ),
+          ),
+
+          SizedBox(
+            width: 15,
+          ),
+          InkWell(
+            onTap: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => GetInTouch(),
+                  ));
+            },
+            child: Text(
+              "Get In Touch",
+              style: MyTextStyle.appbartext,
+            ),
+          ),
+          SizedBox(
+            width: 25,
+          )
+        ],
+      ),
       body: LayoutBuilder(
         builder: (context, constraints) {
           return SingleChildScrollView(
@@ -39,6 +142,91 @@ class _AboutMeState extends State<AboutMe> {
                           SizedBox(
                             width: 100,
                           ),
+                          Expanded(
+                              child: Container(
+                                  // color: Colors.white,
+
+                                  child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              SizedBox(
+                                height: 30,
+                              ),
+                              Text(
+                                "Hello,Welcome!",
+                                style: TextStyle(
+                                    color: Colors.orange, fontSize: 13),
+                              ),
+                              SizedBox(
+                                height: 5,
+                              ),
+
+                              Text(
+                                "I'm Akhila M",
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 22,
+                                    fontWeight: FontWeight.bold),
+                              ),
+                              SizedBox(
+                                height: 10,
+                              ),
+
+                              Text(
+                                  "An enthusiastic Flutter developer with a passion for creating beautiful, high-performance mobile applications. With a keen interest in Flutter's approach to cross-platform development, I am dedicated to mastering this powerful framework.",
+                                  textAlign: TextAlign.justify,
+                                  style: GoogleFonts.openSans(
+                                      textStyle: TextStyle(
+                                          color: Colors.grey, fontSize: 15))
+
+                                  // TextStyle(
+                                  //     color: Colors.white, fontSize: 18),
+                                  ),
+                              // SizedBox(
+                              //   height: 20,
+                              // ),
+                              // Text(
+                              //     "I have honed my skills through various projects. As a lifelong learner, I constantly explore the latest advancements in Flutter and Dart, experimenting with new widgets, integrating innovative libraries, and optimizing app performance.",
+                              //     textAlign: TextAlign.justify,
+                              //     style: GoogleFonts.openSans(
+                              //         textStyle: TextStyle(
+                              //             color: Colors.white, fontSize: 18))),
+                              SizedBox(
+                                height: 20,
+                              ),
+                              Text("Lets build something amazing together.",
+                                  textAlign: TextAlign.justify,
+                                  style: GoogleFonts.openSans(
+                                      textStyle: TextStyle(
+                                          color: Colors.white, fontSize: 16))),
+                              SizedBox(
+                                height: 5,
+                              ),
+
+                              InkWell(
+                                onTap: () {
+                                  _launchURL(
+                                      "https://drive.google.com/file/d/1FdRl4TAHo85iSdRDf2TDFnibn1PTnOzW/view?usp=drive_links");
+                                },
+                                child: Container(
+                                  padding: EdgeInsets.all(10),
+                                  decoration: BoxDecoration(
+                                      color: Colors.orange,
+                                      borderRadius: BorderRadius.circular(4)),
+                                  child: Text(
+                                    "DOWNLOAD CV",
+                                    style: TextStyle(
+                                        color: Colors.black,
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 12),
+                                  ),
+                                ),
+                              )
+                            ],
+                          ))),
+                          SizedBox(
+                            width: 100,
+                          ),
                           Container(
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(100),
@@ -52,78 +240,6 @@ class _AboutMeState extends State<AboutMe> {
                           SizedBox(
                             width: 100,
                           ),
-                          Expanded(
-                              child: Container(
-                                  // color: Colors.white,
-
-                                  child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              SizedBox(
-                                height: 30,
-                              ),
-                              // Text(
-                              //   "FLUTTER DEVELOPER",
-                              //   style: TextStyle(
-                              //       color: Colors.orange,
-                              //       fontWeight: FontWeight.bold,
-                              //       fontSize: 30),
-                              // ),
-                              Text(
-                                  "Hello! I'm Akhila, an enthusiastic Flutter developer with a passion for creating beautiful, high-performance mobile applications. With a keen interest in Flutter's approach to cross-platform development, I am dedicated to mastering this powerful framework. My journey with Flutter began out of a fascination with its ability to build natively compiled applications from a single codebase.",
-                                  textAlign: TextAlign.justify,
-                                  style: GoogleFonts.openSans(
-                                      textStyle: TextStyle(
-                                          color: Colors.white, fontSize: 18))
-
-                                  // TextStyle(
-                                  //     color: Colors.white, fontSize: 18),
-                                  ),
-                              SizedBox(
-                                height: 20,
-                              ),
-                              Text(
-                                  "Over the past months, I have honed my skills through various projects, showcasing my commitment to clean code, intuitive UI/UX design, and efficient functionality. As a lifelong learner, I constantly explore the latest advancements in Flutter and Dart, experimenting with new widgets, integrating innovative libraries, and optimizing app performance.",
-                                  textAlign: TextAlign.justify,
-                                  style: GoogleFonts.openSans(
-                                      textStyle: TextStyle(
-                                          color: Colors.white, fontSize: 18))),
-                              SizedBox(
-                                height: 20,
-                              ),
-
-                              Text(
-                                  "When I'm not coding, I enjoy tech blogs, attending Flutter meetups, and contributing to the Flutter community. I'm driven by a desire to create impactful solutions and continuously grow as a developer.",
-                                  textAlign: TextAlign.justify,
-                                  style: GoogleFonts.openSans(
-                                      textStyle: TextStyle(
-                                          color: Colors.white, fontSize: 18)))
-                            ],
-                          )
-                                  // AnimatedTextKit(
-                                  //   animatedTexts: [
-                                  //     FadeAnimatedText(
-                                  //       "FLUTTER DEVELOPER",
-                                  //       textStyle: TextStyle(
-                                  //           color: Colors.orange,
-                                  //           fontSize: 25,
-                                  //           fontWeight: FontWeight.bold),
-                                  //     ),
-                                  //     ScaleAnimatedText(
-                                  //         "Hello! I'm [Your Name], an enthusiastic Flutter developer with a passion for creating beautiful, high-performance mobile applications. With a keen interest in Flutter's approach to cross-platform development, I am dedicated to mastering this powerful framework. My journey with Flutter began out of a fascination with its ability to build natively compiled applications from a single codebase.Over the past [number] years, I have honed my skills through various projects, showcasing my commitment to clean code, intuitive UI/UX design, and efficient functionality. As a lifelong learner, I constantly explore the latest advancements in Flutter and Dart, experimenting with new widgets, integrating innovative libraries, and optimizing app performance.When I'm not coding, I enjoy tech blogs, attending Flutter meetups, and contributing to the Flutter community. I'm driven by a desire to create impactful solutions and continuously grow as a developer.Lets build somethng amazing together!",
-                                  //         duration: Duration(milliseconds: 4000),
-                                  //         textAlign: TextAlign.start,
-                                  //         textStyle: TextStyle(
-                                  //             color: Colors.white,
-                                  //              fontSize: 19)
-
-                                  //              )
-                                  //   ],
-                                  //   isRepeatingAnimation: false,
-                                  //   displayFullTextOnTap: true,
-                                  //   totalRepeatCount: 1,
-                                  // ),
-                                  )),
                           SizedBox(
                             width: 100,
                           ),
@@ -134,23 +250,6 @@ class _AboutMeState extends State<AboutMe> {
                       SizedBox(
                         height: 150,
                       ),
-
-                      // Container(
-                      //   height: 100,
-                      //   decoration: BoxDecoration(
-                      //       border: Border.all(color: Colors.orange, width: 2)),
-                      //   child: Center(
-                      //     child: AnimatedTextKit(animatedTexts: [
-                      //       WavyAnimatedText(
-                      //           "I dont just code,I paint them with flutter",
-                      //           textStyle: TextStyle(
-                      //               color: Colors.orange, fontSize: 30))
-                      //     ]),
-                      //   ),
-                      // ),
-                      // SizedBox(
-                      //   height: 150,
-                      // ),
 
                       SecondPage(),
                     ],

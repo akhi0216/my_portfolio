@@ -1,6 +1,5 @@
 // ignore_for_file: prefer_const_constructors, sort_child_properties_last
 
-import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/core/constants/texts.dart';
@@ -27,13 +26,13 @@ class _FourthPagrState extends State<FourthPagr> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        SizedBox(height: 100),
+        SizedBox(height: 45),
         Text(
           "KEEP IN TOUCH",
-          style: MyTextStyle.cursivetext,
+          style: MyTextStyle.name,
         ),
         SizedBox(
-          height: 100,
+          height: 60,
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -109,7 +108,7 @@ class _FourthPagrState extends State<FourthPagr> {
               ],
             ),
             SizedBox(
-              width: 200,
+              width: 100,
             ),
 
             // -----------------------------second item
@@ -124,15 +123,9 @@ class _FourthPagrState extends State<FourthPagr> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 // mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  AnimatedTextKit(
-                    animatedTexts: [
-                      RotateAnimatedText(
-                          "Lets build something amazing together",
-                          textStyle: TextStyle(color: Colors.white)),
-                    ],
-                    isRepeatingAnimation: true,
-                    totalRepeatCount: 10,
-                    pause: Duration(milliseconds: 1000),
+                  Text(
+                    "Lets build something amazing together",
+                    style: MyTextStyle.insidewhitetext,
                   ),
                   SizedBox(
                     height: 30,

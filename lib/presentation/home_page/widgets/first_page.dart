@@ -16,6 +16,9 @@ class FirstPage extends StatefulWidget {
 class _FirstPageState extends State<FirstPage> {
   @override
   Widget build(BuildContext context) {
+    String name =
+        "A Flutter Developer with a passion for devleoping scalable mobile applications with a strong problem-solving skills and a focus on writing read and maintainable code";
+    String newName = '"$name"';
     return
         // height: constraints.maxHeight * 0.7,
 
@@ -74,7 +77,7 @@ class _FirstPageState extends State<FirstPage> {
         ),
 
         SizedBox(
-          height: 150,
+          height: 95,
         ),
 
         // ================2
@@ -84,27 +87,8 @@ class _FirstPageState extends State<FirstPage> {
           crossAxisAlignment: CrossAxisAlignment.start,
           // mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            // Container(
-            //   height: 90,
-            //   width: 90,
-            //   decoration: BoxDecoration(
-            //       image: DecorationImage(
-            //           image: AssetImage(Imageconstants.flutterpc))),
-            //   // Lottie.asset("assets/images/Animation - 1716288304246.json"),
-            // ),
-            SizedBox(
-              width: 100,
-            ),
-            // Expanded(
-            //   child: Padding(
-            //     padding:
-            //         const EdgeInsets.symmetric(horizontal: 8.0),
-            //     child: Text(
-            //       "A Flutter Developer with a passion for devleoping scalable mobile applications with a strong problem-solving skills and a focus on writing read and maintainable code",
-            //       style: MyTextStyle.normaltext,
-            //       textAlign: TextAlign.start,
-            //     ),
-            //   ),
+            // SizedBox(
+            //   width: 100,
             // ),
 
             Expanded(
@@ -112,15 +96,15 @@ class _FirstPageState extends State<FirstPage> {
                 padding: const EdgeInsets.symmetric(horizontal: 8.0),
                 child: AnimatedTextKit(
                   animatedTexts: [
-                    TypewriterAnimatedText(
-                        // "I dont develop apps, I paint them with Flutter",
-                        "A Flutter Developer with a passion for devleoping scalable mobile applications with a strong problem-solving skills and a focus on writing read and maintainable code",
-                        textAlign: TextAlign.start,
+                    TypewriterAnimatedText(newName,
+
+                        // "A Flutter Developer with a passion for devleoping scalable mobile applications with a strong problem-solving skills and a focus on writing read and maintainable code",
+                        textAlign: TextAlign.center,
                         textStyle: TextStyle(
                             fontFamily: 'poppins',
                             color: Colors.white,
                             fontSize: 30),
-                        speed: Duration(milliseconds: 20))
+                        speed: Duration(milliseconds: 40))
                   ],
                   totalRepeatCount: 1,
                   stopPauseOnTap: true,
