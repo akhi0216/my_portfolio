@@ -125,75 +125,117 @@ class _ThirdPageState extends State<ThirdPage> {
               children: [
                 // First container
                 Container(
-                  height: 300,
+                  height: 350,
                   width: 270,
-                  child: CarouselSlider(
-                    items: [
-                      Image.asset(Imageconstants.v1),
-                      Image.asset(Imageconstants.v2),
-                      Image.asset(Imageconstants.v3),
-                      // Image.network(
-                      //     "https://images.pexels.com/photos/20717340/pexels-photo-20717340/free-photo-of-a-dark-sky-with-a-lighthouse-and-a-beach.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"),
-                      // Image.network(
-                      //     "https://images.pexels.com/photos/21550531/pexels-photo-21550531/free-photo-of-a-window-with-a-view-of-the-ocean.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load")
+                  child: Column(
+                    // crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        "Car Rental App",
+                        style: GoogleFonts.poppins(
+                            textStyle: TextStyle(color: Colors.white)),
+                      ),
+                      SizedBox(
+                        height: 3,
+                      ),
+                      CarouselSlider(
+                        items: [
+                          Image.asset(
+                            Imageconstants.v1,
+                          ),
+                          Image.asset(Imageconstants.v2),
+                          Image.asset(Imageconstants.v3),
+                          // Image.network(
+                          //     "https://images.pexels.com/photos/20717340/pexels-photo-20717340/free-photo-of-a-dark-sky-with-a-lighthouse-and-a-beach.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"),
+                          // Image.network(
+                          //     "https://images.pexels.com/photos/21550531/pexels-photo-21550531/free-photo-of-a-window-with-a-view-of-the-ocean.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load")
+                        ],
+                        options: CarouselOptions(
+                          autoPlay: true,
+                          autoPlayAnimationDuration: Duration(seconds: 1),
+                          viewportFraction: 1,
+                          height: 300,
+                        ),
+                      ),
                     ],
-                    options: CarouselOptions(
-                      autoPlay: true,
-                      autoPlayAnimationDuration: Duration(seconds: 1),
-                      viewportFraction: 1,
-                      height: 300,
-                    ),
                   ),
                 ),
                 SizedBox(width: 10),
                 // Second container
                 Container(
-                  height: 300,
+                  height: 350,
                   width: 270,
-                  child: CarouselSlider(
-                    items: [
-                      // Image.network(
-                      //     "https://images.pexels.com/photos/23985550/pexels-photo-23985550/free-photo-of-a-windmill-in-the-fog-with-a-tree-in-the-background.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"),
-                      // Image.network(
-                      //     "https://images.pexels.com/photos/20717340/pexels-photo-20717340/free-photo-of-a-dark-sky-with-a-lighthouse-and-a-beach.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"),
-                      // Image.network(
-                      //     "https://images.pexels.com/photos/21550531/pexels-photo-21550531/free-photo-of-a-window-with-a-view-of-the-ocean.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load")
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        "Quiz Application",
+                        style: GoogleFonts.poppins(
+                            textStyle: TextStyle(color: Colors.white)),
+                      ),
+                      SizedBox(
+                        height: 3,
+                      ),
+                      CarouselSlider(
+                        items: [
+                          // Image.network(
+                          //     "https://images.pexels.com/photos/23985550/pexels-photo-23985550/free-photo-of-a-windmill-in-the-fog-with-a-tree-in-the-background.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"),
+                          // Image.network(
+                          //     "https://images.pexels.com/photos/20717340/pexels-photo-20717340/free-photo-of-a-dark-sky-with-a-lighthouse-and-a-beach.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"),
+                          // Image.network(
+                          //     "https://images.pexels.com/photos/21550531/pexels-photo-21550531/free-photo-of-a-window-with-a-view-of-the-ocean.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load")
 
-                      Image.asset(Imageconstants.q1),
-                      Image.asset(Imageconstants.q2),
-                      Image.asset(Imageconstants.q3),
+                          Image.asset(Imageconstants.q1),
+                          Image.asset(Imageconstants.q2),
+                          Image.asset(Imageconstants.q3),
+                        ],
+                        options: CarouselOptions(
+                          autoPlay: true,
+                          autoPlayAnimationDuration: Duration(seconds: 1),
+                          viewportFraction: 1,
+                          height: 300,
+                        ),
+                      ),
                     ],
-                    options: CarouselOptions(
-                      autoPlay: true,
-                      autoPlayAnimationDuration: Duration(seconds: 1),
-                      viewportFraction: 1,
-                      height: 300,
-                    ),
                   ),
                 ),
                 SizedBox(width: 10),
                 // Third container
                 Container(
-                  height: 300,
+                  height: 350,
                   width: 270,
-                  child: CarouselSlider(
-                    items: [
-                      // Image.network(
-                      //     "https://images.pexels.com/photos/23985550/pexels-photo-23985550/free-photo-of-a-windmill-in-the-fog-with-a-tree-in-the-background.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"),
-                      // Image.network(
-                      //     "https://images.pexels.com/photos/20717340/pexels-photo-20717340/free-photo-of-a-dark-sky-with-a-lighthouse-and-a-beach.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"),
-                      // Image.network(
-                      //     "https://images.pexels.com/photos/21550531/pexels-photo-21550531/free-photo-of-a-window-with-a-view-of-the-ocean.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load")
-                      Image.asset(Imageconstants.o1),
-                      Image.asset(Imageconstants.o2),
-                      Image.asset(Imageconstants.o3),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        "Olx Clone",
+                        style: GoogleFonts.poppins(
+                            textStyle: TextStyle(color: Colors.white)),
+                      ),
+                      SizedBox(
+                        height: 3,
+                      ),
+                      CarouselSlider(
+                        items: [
+                          // Image.network(
+                          //     "https://images.pexels.com/photos/23985550/pexels-photo-23985550/free-photo-of-a-windmill-in-the-fog-with-a-tree-in-the-background.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"),
+                          // Image.network(
+                          //     "https://images.pexels.com/photos/20717340/pexels-photo-20717340/free-photo-of-a-dark-sky-with-a-lighthouse-and-a-beach.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"),
+                          // Image.network(
+                          //     "https://images.pexels.com/photos/21550531/pexels-photo-21550531/free-photo-of-a-window-with-a-view-of-the-ocean.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load")
+                          Image.asset(Imageconstants.o1),
+                          Image.asset(Imageconstants.o2),
+                          Image.asset(Imageconstants.o3),
+                        ],
+                        options: CarouselOptions(
+                          autoPlay: true,
+                          autoPlayAnimationDuration: Duration(seconds: 1),
+                          viewportFraction: 1,
+                          height: 300,
+                        ),
+                      ),
                     ],
-                    options: CarouselOptions(
-                      autoPlay: true,
-                      autoPlayAnimationDuration: Duration(seconds: 1),
-                      viewportFraction: 1,
-                      height: 300,
-                    ),
                   ),
                 ),
               ],
@@ -208,76 +250,115 @@ class _ThirdPageState extends State<ThirdPage> {
               children: [
                 // First container
                 Container(
-                  height: 300,
+                  height: 350,
                   width: 270,
-                  child: CarouselSlider(
-                    items: [
-                      // Image.network(
-                      //     "https://images.pexels.com/photos/20717340/pexels-photo-20717340/free-photo-of-a-dark-sky-with-a-lighthouse-and-a-beach.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"),
-                      // Image.network(
-                      //     "https://images.pexels.com/photos/21550531/pexels-photo-21550531/free-photo-of-a-window-with-a-view-of-the-ocean.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load")
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        "Note Application",
+                        style: GoogleFonts.poppins(
+                            textStyle: TextStyle(color: Colors.white)),
+                      ),
+                      SizedBox(
+                        height: 3,
+                      ),
+                      CarouselSlider(
+                        items: [
+                          // Image.network(
+                          //     "https://images.pexels.com/photos/20717340/pexels-photo-20717340/free-photo-of-a-dark-sky-with-a-lighthouse-and-a-beach.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"),
+                          // Image.network(
+                          //     "https://images.pexels.com/photos/21550531/pexels-photo-21550531/free-photo-of-a-window-with-a-view-of-the-ocean.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load")
 
-                      Image.asset(Imageconstants.note1),
-                      Image.asset(Imageconstants.note2),
-                      Image.asset(Imageconstants.note3),
+                          Image.asset(Imageconstants.note1),
+                          Image.asset(Imageconstants.note2),
+                          Image.asset(Imageconstants.note3),
+                        ],
+                        options: CarouselOptions(
+                          autoPlay: true,
+                          autoPlayAnimationDuration: Duration(seconds: 1),
+                          viewportFraction: 1,
+                          height: 300,
+                        ),
+                      ),
                     ],
-                    options: CarouselOptions(
-                      autoPlay: true,
-                      autoPlayAnimationDuration: Duration(seconds: 1),
-                      viewportFraction: 1,
-                      height: 300,
-                    ),
                   ),
                 ),
                 SizedBox(width: 10),
                 // Second container
                 Container(
-                  height: 300,
+                  height: 350,
                   width: 270,
-                  child: CarouselSlider(
-                    items: [
-                      // Image.network(
-                      //     "https://images.pexels.com/photos/23985550/pexels-photo-23985550/free-photo-of-a-windmill-in-the-fog-with-a-tree-in-the-background.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"),
-                      // Image.network(
-                      //     "https://images.pexels.com/photos/20717340/pexels-photo-20717340/free-photo-of-a-dark-sky-with-a-lighthouse-and-a-beach.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"),
-                      // Image.network(
-                      //     "https://images.pexels.com/photos/21550531/pexels-photo-21550531/free-photo-of-a-window-with-a-view-of-the-ocean.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load")
-                      Image.asset(Imageconstants.n1),
-                      Image.asset(Imageconstants.n2),
-                      Image.asset(Imageconstants.n3),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        "Netflix Clone",
+                        style: GoogleFonts.poppins(
+                            textStyle: TextStyle(color: Colors.white)),
+                      ),
+                      SizedBox(
+                        height: 3,
+                      ),
+                      CarouselSlider(
+                        items: [
+                          // Image.network(
+                          //     "https://images.pexels.com/photos/23985550/pexels-photo-23985550/free-photo-of-a-windmill-in-the-fog-with-a-tree-in-the-background.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"),
+                          // Image.network(
+                          //     "https://images.pexels.com/photos/20717340/pexels-photo-20717340/free-photo-of-a-dark-sky-with-a-lighthouse-and-a-beach.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"),
+                          // Image.network(
+                          //     "https://images.pexels.com/photos/21550531/pexels-photo-21550531/free-photo-of-a-window-with-a-view-of-the-ocean.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load")
+                          Image.asset(Imageconstants.n1),
+                          Image.asset(Imageconstants.n2),
+                          Image.asset(Imageconstants.n3),
+                        ],
+                        options: CarouselOptions(
+                          autoPlay: true,
+                          autoPlayAnimationDuration: Duration(seconds: 1),
+                          viewportFraction: 1,
+                          height: 300,
+                        ),
+                      ),
                     ],
-                    options: CarouselOptions(
-                      autoPlay: true,
-                      autoPlayAnimationDuration: Duration(seconds: 1),
-                      viewportFraction: 1,
-                      height: 300,
-                    ),
                   ),
                 ),
                 SizedBox(width: 10),
                 // Third container
                 Container(
-                  height: 300,
+                  height: 350,
                   width: 270,
-                  child: CarouselSlider(
-                    items: [
-                      // Image.network(
-                      //     "https://images.pexels.com/photos/23985550/pexels-photo-23985550/free-photo-of-a-windmill-in-the-fog-with-a-tree-in-the-background.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"),
-                      // Image.network(
-                      //     "https://images.pexels.com/photos/20717340/pexels-photo-20717340/free-photo-of-a-dark-sky-with-a-lighthouse-and-a-beach.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"),
-                      // Image.network(
-                      //     "https://images.pexels.com/photos/21550531/pexels-photo-21550531/free-photo-of-a-window-with-a-view-of-the-ocean.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load")
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        "Todo Application",
+                        style: GoogleFonts.poppins(
+                            textStyle: TextStyle(color: Colors.white)),
+                      ),
+                      SizedBox(
+                        height: 3,
+                      ),
+                      CarouselSlider(
+                        items: [
+                          // Image.network(
+                          //     "https://images.pexels.com/photos/23985550/pexels-photo-23985550/free-photo-of-a-windmill-in-the-fog-with-a-tree-in-the-background.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"),
+                          // Image.network(
+                          //     "https://images.pexels.com/photos/20717340/pexels-photo-20717340/free-photo-of-a-dark-sky-with-a-lighthouse-and-a-beach.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"),
+                          // Image.network(
+                          //     "https://images.pexels.com/photos/21550531/pexels-photo-21550531/free-photo-of-a-window-with-a-view-of-the-ocean.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load")
 
-                      Image.asset(Imageconstants.t1),
-                      Image.asset(Imageconstants.t2),
-                      Image.asset(Imageconstants.t3),
+                          Image.asset(Imageconstants.t1),
+                          Image.asset(Imageconstants.t2),
+                          Image.asset(Imageconstants.t3),
+                        ],
+                        options: CarouselOptions(
+                          autoPlay: true,
+                          autoPlayAnimationDuration: Duration(seconds: 1),
+                          viewportFraction: 1,
+                          height: 300,
+                        ),
+                      ),
                     ],
-                    options: CarouselOptions(
-                      autoPlay: true,
-                      autoPlayAnimationDuration: Duration(seconds: 1),
-                      viewportFraction: 1,
-                      height: 300,
-                    ),
                   ),
                 ),
               ],
