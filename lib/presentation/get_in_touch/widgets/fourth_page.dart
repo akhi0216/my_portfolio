@@ -165,7 +165,7 @@ class _FourthPagrState extends State<FourthPagr> {
         ),
         Container(
           width: 500,
-          height: 100,
+          height: 125,
           decoration: BoxDecoration(
               color: const Color.fromARGB(225, 255, 153, 0),
               borderRadius: BorderRadius.only(
@@ -184,7 +184,7 @@ class _FourthPagrState extends State<FourthPagr> {
                     child: Image.asset("assets/images/social.png")),
               ),
               SizedBox(
-                width: 10,
+                width: 15,
               ),
               InkWell(
                 onTap: () {
@@ -196,7 +196,7 @@ class _FourthPagrState extends State<FourthPagr> {
                     child: Image.asset("assets/images/code.png")),
               ),
               SizedBox(
-                width: 10,
+                width: 15,
               ),
               InkWell(
                 onTap: () {
@@ -209,7 +209,7 @@ class _FourthPagrState extends State<FourthPagr> {
                 ),
               ),
               SizedBox(
-                width: 10,
+                width: 15,
               ),
               InkWell(
                 onTap: () {
