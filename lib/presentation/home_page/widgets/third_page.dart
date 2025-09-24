@@ -12,6 +12,7 @@ import 'package:my_portfolio/core/constants/texts.dart';
 import 'package:my_portfolio/presentation/about_me/about_me.dart';
 import 'package:my_portfolio/presentation/get_in_touch/get_in_touch.dart';
 import 'package:my_portfolio/presentation/home_page/home_page.dart';
+import 'package:my_portfolio/presentation/home_page/widgets/experience_page.dart';
 
 class ThirdPage extends StatefulWidget {
   const ThirdPage({super.key});
@@ -70,6 +71,25 @@ class _ThirdPageState extends State<ThirdPage> {
             },
             child: Text(
               "Portfolio",
+              style: MyTextStyle.appbartext,
+            ),
+          ),
+
+          SizedBox(
+            width: 15,
+          ),
+          InkWell(
+            onTap: () {
+              // _scrollToThirdPage();
+              // setState(() {});
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => ExperiencePage(),
+                  ));
+            },
+            child: Text(
+              "Work Experience",
               style: MyTextStyle.appbartext,
             ),
           ),

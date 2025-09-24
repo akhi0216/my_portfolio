@@ -1,10 +1,10 @@
-
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:my_portfolio/core/constants/color_constants.dart';
 import 'package:my_portfolio/core/constants/texts.dart';
 import 'package:my_portfolio/presentation/about_me/about_me.dart';
 import 'package:my_portfolio/presentation/get_in_touch/get_in_touch.dart';
+import 'package:my_portfolio/presentation/home_page/widgets/experience_page.dart';
 import 'package:my_portfolio/presentation/home_page/widgets/first_page.dart';
 import 'package:my_portfolio/presentation/home_page/widgets/third_page.dart';
 
@@ -61,6 +61,17 @@ class _HomePageState extends State<HomePage> {
               padding: const EdgeInsets.symmetric(horizontal: 15),
               child: Text(
                 "Portfolio",
+                style: MyTextStyle.appbartext,
+              ),
+            ),
+          ),
+          SizedBox(width: 15),
+          InkWell(
+            onTap: () => navigateToPage(ExperiencePage()),
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 15),
+              child: Text(
+                "Work Experience",
                 style: MyTextStyle.appbartext,
               ),
             ),

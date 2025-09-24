@@ -6,6 +6,7 @@ import 'package:my_portfolio/core/constants/texts.dart';
 import 'package:my_portfolio/presentation/about_me/about_me.dart';
 import 'package:my_portfolio/presentation/get_in_touch/widgets/fourth_page.dart';
 import 'package:my_portfolio/presentation/home_page/home_page.dart';
+import 'package:my_portfolio/presentation/home_page/widgets/experience_page.dart';
 import 'package:my_portfolio/presentation/home_page/widgets/third_page.dart';
 
 class GetInTouch extends StatefulWidget {
@@ -65,6 +66,25 @@ class _GetInTouchState extends State<GetInTouch> {
             },
             child: Text(
               "Portfolio",
+              style: MyTextStyle.appbartext,
+            ),
+          ),
+
+          SizedBox(
+            width: 15,
+          ),
+          InkWell(
+            onTap: () {
+              // _scrollToThirdPage();
+              // setState(() {});
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => ExperiencePage(),
+                  ));
+            },
+            child: Text(
+              "Work Experience",
               style: MyTextStyle.appbartext,
             ),
           ),
